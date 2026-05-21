@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESP32 Servo Control</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">SC</span>
+      <div>
+        <h1>ESP32 Servo Control</h1>
+        <p class="subtitle">PCA9685 - SG90 - MQTT en vivo</p>
+      </div>
+    </div>
+    <div class="status">
+      <div class="pill" id="connPill">
+        <span class="dot" id="connDot"></span>
+        <span id="connText">Conectando...</span>
+      </div>
+      <div class="meta" id="metaInfo">-</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card global-card">
+      <div class="card-head">
+        <h2>Control global</h2>
+        <span class="hint">Aplica a todos los servos a la vez</span>
+      </div>
+      <div class="global-actions">
+        <button class="btn btn-primary" data-load-all="0">Cargar Preset 1 (todos)</button>
+        <button class="btn btn-primary" data-load-all="1">Cargar Preset 2 (todos)</button>
+        <button class="btn btn-ghost"   id="centerAllBtn">Centrar (90 grados)</button>
+        <button class="btn btn-ghost"   id="refreshBtn">Solicitar estado</button>
+      </div>
+    </section>
+
+    <section class="grid" id="servoGrid">
+      <!-- tarjetas inyectadas por JS segun /api/config -->
+    </section>
+
+    <section class="card log-card">
+      <div class="card-head">
+        <h2>Log</h2>
+        <button class="btn btn-ghost btn-sm" id="clearLogBtn">Limpiar</button>
+      </div>
+      <pre id="log" class="log"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Device ID: <code id="deviceId">-</code> -
+      <a href="/docs" target="_blank" rel="noopener">API docs</a> -
+      <a href="https://github.com/NicolasCuaran/esp32-servo-mqtt-control" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Node / web ----
+node_modules/
+dist/
+
+# ---- Arduino / PlatformIO ----
+build/
+.pio/
+.pioenvs/
+.piolibdeps/
+.vscode/
+*.elf
+*.bin
+
+# ---- Credenciales locales (NUNCA versionar) ----
+firmware/esp32_servo_controller/secrets.h
+**/secrets.h
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
